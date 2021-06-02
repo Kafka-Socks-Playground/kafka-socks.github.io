@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "/client/index.tsx",
+  "homepage": "https://kafka-socks-playground.github.io/kafka-socks.github.io/",
   "scripts": {
     "__test__": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -10,7 +11,11 @@
     "go": "npm run build && npm start",
     "__dev-mac-only__": "cross-env NODE_ENV=development webpack serve --open && NODE_ENV=development nodemon server/server.ts",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"nodemon server/server.ts\"",
-    "components": "webpack serve --open"
+    "components": "webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d dist",
+    "start_gh": "react-scripts start",
+    "build_gh": "react-scripts build"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -21,6 +26,7 @@
     "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "gh-pages": "^3.2.0",
     "html-webpack-plugin": "^5.3.1",
     "kafka-socks": "^0.1.0",
     "node": "^16.1.0",
