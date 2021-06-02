@@ -1,7 +1,0 @@
-node_modules
-.DS_Store
-*.bak
-Subject.js
-Consumer.js
-Confluent.js
-*.zip
